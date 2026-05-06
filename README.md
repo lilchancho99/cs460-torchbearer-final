@@ -1,29 +1,24 @@
 # The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Luis Alvarez
+**Student ID:** 131702893
 **Course:** CS 460 – Algorithms | Spring 2026
 
-> This README is your project documentation. Write it the way a developer would document
-> their design decisions , bullet points, brief justifications, and concrete examples where
-> required. You are not writing an essay. You are explaining what you built and why you built
-> it that way. Delete all blockquotes like this one before submitting.
+
 
 ---
 
 ## Part 1: Problem Analysis
 
-> Document why this problem is not just a shortest-path problem. Three bullet points, one
-> per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  So we need the shortest path distances from S to each relic and not just S alone.
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+  to decide which route to pick since the algorthm doesn't tell you which is the cheapest
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+ There are k! possible orderings of relics so no single computation will be able to determine which ordering is cheapest
 
 ---
 
