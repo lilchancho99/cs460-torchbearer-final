@@ -32,9 +32,12 @@ def explain_problem():
         Your Part 1 README answers, written as a string.
         Must match what you wrote in README Part 1.
 
-    TODO
     """
-    return "TODO"
+    return
+    """
+    1. 
+    
+    """
 
 
 # =============================================================================
@@ -56,6 +59,7 @@ def select_sources(spawn, relics, exit_node):
 
     TODO
     """
+    set = {spawn, exit_node}
     pass
 
 
