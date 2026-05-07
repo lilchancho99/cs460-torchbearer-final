@@ -59,35 +59,36 @@
 > Document your understanding of why Dijkstra produces correct distances.
 > Bullet points and short sentences throughout. No paragraphs.
 
+
 ### Part 3a: What the Invariant Means
 
 > Two bullets: one for finalized nodes, one for non-finalized nodes.
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  _The distanced that was found is stored as the shortest path possible._
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  _the distance found so far can still be improved._
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  _Because the algorithm hasn't looked at any nodes so it cant say it made a mistake._
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  _because if we keep adding more nodes to the path, then it will cost more unless the new path adds 0._
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  _so once the algorithm ends, all distances will be as small as they can be since there is no possible way to improve it._
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+_So if the distances are wrong and it picks a route that costs less than it actually does, then the route planner will make more incorrect decisions based on the cost it haad picked making it never picking the optimal path._
 
 ---
 

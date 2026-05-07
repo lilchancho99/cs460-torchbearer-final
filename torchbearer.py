@@ -140,7 +140,18 @@ def dijkstra_invariant_check():
 
     TODO
     """
-    return "TODO"
+    return """
+    3a. The distanced that was found is stored as the shortest path possible.
+        the distance found so far can still be improved
+    3b. Because the algorithm hasn't looked at any nodes so it cant say it made a mistake.
+        because if we keep adding more nodes to the path, then it will cost more unless the new path adds 0.
+        so once the algorithm ends, all distances will be as small as they can be since there is no possible way to improve it.
+    3c. So if the distances are wrong and it picks a route that costs less than it actually does, then the route planner will make more incorrect decisions based on the cost it haad picked making it never picking the optimal path.
+    
+    """
+
+
+    
 
 
 # =============================================================================
