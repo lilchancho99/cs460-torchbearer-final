@@ -115,9 +115,15 @@ def precompute_distances(graph, spawn, relics, exit_node):
         Nested structure supporting dist_table[u][v] lookups
         for every source u your design requires.
 
-    TODO
+    
     """
-    pass
+    distance_table = {}
+    start_nodes = select_sources(spawn, relics, exit_node)
+    for node in start_nodes:
+        distance_table[node] = run_dijkstra(graph, node)
+    return distance_table
+    
+    
 
 
 # =============================================================================

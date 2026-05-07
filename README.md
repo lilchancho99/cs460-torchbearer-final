@@ -46,12 +46,11 @@
 
 ### Part 2c: Precomputation Complexity
 
-> State the total complexity and show the arithmetic. Two to three lines max.
 
 - **Number of Dijkstra runs:** _there is a relic + 1 spawn which in the total run it's k+1_
-- **Cost per run:** _shortest path cost O(m log n)^n_
+- **Cost per run:** _shortest path cost O(m log n)_
 - **Total complexity:** _(k+1) x O(m log n) = O((k+1)m log n)_
-- **Justification (one line):** _we need to run dijkstra once from spanw and once from each of the relics and then run costs O(m log n) which gives us a O(k m log n)_
+- **Justification (one line):** _we need to run dijkstra once from spawn and once from each of the relics and then run costs O(m log n) which gives us a O(k m log n)_
 
 ---
 
