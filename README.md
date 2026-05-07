@@ -30,29 +30,28 @@
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| _spawn S_ | _we need distances from S to find the cheapest path to the next relic we need to visit_ |
+| _relic nodes_ | _we need distances from it to reach the next relic or exit_ |
 
 ### Part 2b: Distance Storage
 
-> Fill in the table. No prose required.
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Dictionary |
+| What the keys represent | each node in the graph |
+| What the values represent | minimum cost from source to that node |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | it uses hashing to map keys to memory locations |
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** _there is a relic + 1 spawn which in the total run it's k+1_
+- **Cost per run:** _shortest path cost O(m log n)^n_
+- **Total complexity:** _(k+1) x O(m log n) = O((k+1)m log n)_
+- **Justification (one line):** _we need to run dijkstra once from spanw and once from each of the relics and then run costs O(m log n) which gives us a O(k m log n)_
 
 ---
 

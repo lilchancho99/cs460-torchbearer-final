@@ -33,11 +33,13 @@ def explain_problem():
         Must match what you wrote in README Part 1.
 
     """
-    return
-    """
-    1. 
     
+    return  """
+    1. So we need the shortest path distances from S to each relic and not just S alone.
+    2. to decide which route to pick since the algorthm doesn't tell you which is the cheapest
+    3. There are k! possible orderings of relics so no single computation will be able to determine which ordering is cheapest
     """
+   
 
 
 # =============================================================================
@@ -57,10 +59,12 @@ def select_sources(spawn, relics, exit_node):
     list[node]
         No duplicates. Order does not matter.
 
-    TODO
+    
     """
-    set = {spawn, exit_node}
-    pass
+    nodes = {spawn}
+    nodes.update(relics)
+    return list(nodes) 
+    
 
 
 def run_dijkstra(graph, source):
@@ -77,9 +81,23 @@ def run_dijkstra(graph, source):
         Minimum cost from source to every node in graph.
         Unreachable nodes map to float('inf').
 
-    TODO
+    
     """
-    pass
+    distance = {node: float('inf') for node in graph}
+    distance[source] = 0
+    heap = [(0, source)]
+    
+    while heap:
+        cost, node = heapq.heappop(heap)
+        if cost > distance[node]:
+            continue
+        for neighbor, weight in graph[node]:
+            new_cost = cost + weight
+            if new_cost < distance[neighbor]:
+                distance[neighbor] = new_cost
+                heapq.heappush(heap, (new_cost, neighbor))
+    return distance
+    
 
 
 def precompute_distances(graph, spawn, relics, exit_node):
