@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Luis Alvarez
+Student ID:   131702893
 
 INSTRUCTIONS
 ------------

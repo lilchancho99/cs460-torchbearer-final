@@ -33,11 +33,11 @@ This allowed the algorithm to try every possible order without needing to copy t
 ## Entry 4 – [May 8th, 2026]: Post-Implementation Reflection
 
 I think I would want to try adding more edge cases to test and learn more from it.
-I would also want to improve the pruning to cut more brances to see if it makes the search faster for larger inputs.
+I would also want to improve the pruning to cut more branches to see if it makes the search faster for larger inputs.
 
 ---
 
-## Final Entry – [Date]: Time Estimate
+## Final Entry – [May 8th, 2026]: Time Estimate
 
 > Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 

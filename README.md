@@ -84,7 +84,7 @@
 ### Part 3c: Why This Matters for the Route Planner
 
 
-_So if the distances are wrong and it picks a route that costs less than it actually does, then the route planner will make more incorrect decisions based on the cost it haad picked making it never picking the optimal path._
+_So if the distances are wrong and it picks a route that costs less than it actually does, then the route planner will make more incorrect decisions based on the cost it had picked making it never picking the optimal path._
 
 ---
 
@@ -109,8 +109,7 @@ _So if the distances are wrong and it picks a route that costs less than it actu
 
 ### Part 5a: State Representation
 
-> Document the three components of your search state as a table.
-> Variable names here must match exactly what you use in torchbearer.py.
+
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
@@ -120,7 +119,7 @@ _So if the distances are wrong and it picks a route that costs less than it actu
 
 ### Part 5b: Data Structure for Visited Relics
 
-> Fill in the table.
+
 
 | Property | Your answer |
 |---|---|
@@ -132,7 +131,6 @@ _So if the distances are wrong and it picks a route that costs less than it actu
 
 ### Part 5c: Worst-Case Search Space
 
-> Two bullets.
 
 - **Worst-case number of orders considered:** _k!._
 - **Why:** _there are k relics and each can be visited in any order which gives us k * (k-1) * (k-2) * ... * 1 = k!_
@@ -143,7 +141,6 @@ _So if the distances are wrong and it picks a route that costs less than it actu
 
 ### Part 6a: Best-So-Far Tracking
 
-> Three bullets.
 
 - **What is tracked:** _the minimum cost is what is being tracked and same with the order of relics._
 - **When it is used:** _It is checked at each recursive call right before checking a new branch._
@@ -151,7 +148,7 @@ _So if the distances are wrong and it picks a route that costs less than it actu
 
 ### Part 6b: Lower Bound Estimation
 
-> Three bullets.
+
 
 - **What information is available at the current state:** _we know the current location, cost so far, relics left, and the cost between all locations._
 - **What the lower bound accounts for:** _the cheapest possible cost to reach exit T._
@@ -159,7 +156,7 @@ _So if the distances are wrong and it picks a route that costs less than it actu
 
 ### Part 6c: Pruning Correctness
 
-> One to two bullets. Explain why pruning is safe.
+
 
 - _The reason why we prune is because when a branch is the same or cost more than the best so far branch is so that we can keep the least cost branch.._
 
@@ -167,6 +164,7 @@ _So if the distances are wrong and it picks a route that costs less than it actu
 
 ## References
 
-> Bullet list. If none beyond lecture notes, write that.
 
-- _Your references here._
+
+lectures
+geeks for geeks
