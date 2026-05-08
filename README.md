@@ -114,9 +114,9 @@ _So if the distances are wrong and it picks a route that costs less than it actu
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location |current_loc |node (string) | where the torchbearer is at |
+| Relics already collected |relics_visited_order |list |relics collected in order visited |
+| Fuel cost so far |cost_so_far |float |total fuel spent |
 
 ### Part 5b: Data Structure for Visited Relics
 
