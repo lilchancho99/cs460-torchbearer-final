@@ -203,9 +203,13 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
         (minimum_fuel_cost, ordered_relic_list)
         Returns (float('inf'), []) if no valid route exists.
 
-    TODO
+    
     """
-    pass
+    best = [float('inf'), []]
+    relics_remaining = set(relics)
+    _explore(dist_table, spawn, relics_remaining, [], 0, exit_node, best)
+    return best[0], best[1]
+    
 
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
@@ -230,14 +234,38 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     None
         Updates best in place.
 
-    TODO
+    
     Implement: base case, pruning, recursive case, backtracking.
 
     REQUIRED: Add a 1-2 sentence comment near your pruning condition
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
-    pass
+    if not relics_remaining:
+        cost_to_exit = dist_table[current_loc][exit_node]
+        total_cost = cost_so_far + cost_to_exit
+        
+        # pruning condition: 
+        # we only prune when the cost is equal or cost more than the best cost the algorithm found so far.
+        if total_cost < best[0]:
+            best[0] = total_cost
+        
+            best[1] = relics_visited_order.copy()
+        return
+    
+    if cost_so_far >= best[0]:
+        return
+    for relic in relics_remaining:
+        travel_cost = dist_table[current_loc][relic]
+        relics_remaining.remove(relic)
+        relics_visited_order.append(relic)
+        
+        _explore(dist_table, relic, relics_remaining, relics_visited_order, cost_so_far + travel_cost, exit_node, best)
+        
+        relics_remaining.add(relic)
+        relics_visited_order.pop()
+    
+    
 
 
 # =============================================================================
@@ -259,9 +287,12 @@ def solve(graph, spawn, relics, exit_node):
         (minimum_fuel_cost, ordered_relic_list)
         Returns (float('inf'), []) if no valid route exists.
 
-    TODO
+    
     """
-    pass
+    
+    dist_table = precompute_distances(graph, spawn, relics, exit_node)
+    return find_optimal_route(dist_table, spawn, relics, exit_node)
+    
 
 
 # =============================================================================

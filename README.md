@@ -161,7 +161,7 @@ _So if the distances are wrong and it picks a route that costs less than it actu
 
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+- _The reason why we prune is because when a branch is the same or cost more than the best so far branch is so that we can keep the least cost branch.._
 
 ---
 
