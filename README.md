@@ -124,18 +124,18 @@ _So if the distances are wrong and it picks a route that costs less than it actu
 
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen |set |
+| Operation: check if relic already collected | Time complexity: O(1) |
+| Operation: mark a relic as collected | Time complexity: O(1)|
+| Operation: unmark a relic (backtrack) | Time complexity: O(1) |
+| Why this structure fits | because we can use hashing to figure out where they are using the memory address they were assign to.|
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** _k!._
+- **Why:** _there are k relics and each can be visited in any order which gives us k * (k-1) * (k-2) * ... * 1 = k!_
 
 ---
 
@@ -145,17 +145,17 @@ _So if the distances are wrong and it picks a route that costs less than it actu
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** _the minimum cost is what is being tracked and same with the order of relics._
+- **When it is used:** _It is checked at each recursive call right before checking a new branch._
+- **What it allows the algorithm to skip:** _it skips any branch that cost more or equal to the known cost._
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** _we know the current location, cost so far, relics left, and the cost between all locations._
+- **What the lower bound accounts for:** _the cheapest possible cost to reach exit T._
+- **Why it never overestimates:** _it doesn't over estimate because we precomputed the shortest path distances so the actual travel cost can only be equal to or greater than the minimums._
 
 ### Part 6c: Pruning Correctness
 
