@@ -26,7 +26,7 @@
 
 ### Part 2a: Source Selection
 
-> List the source node types as a bullet list. For each, one-line reason.
+
 
 | Source Node Type | Why it is a source |
 |---|---|
@@ -56,14 +56,12 @@
 
 ## Part 3: Algorithm Correctness
 
-> Document your understanding of why Dijkstra produces correct distances.
-> Bullet points and short sentences throughout. No paragraphs.
+
 
 
 ### Part 3a: What the Invariant Means
 
-> Two bullets: one for finalized nodes, one for non-finalized nodes.
-> Do not copy the invariant text from the spec.
+
 
 - **For nodes already finalized (in S):**
   _The distanced that was found is stored as the shortest path possible._
@@ -73,7 +71,6 @@
 
 ### Part 3b: Why Each Phase Holds
 
-> One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
   _Because the algorithm hasn't looked at any nodes so it cant say it made a mistake._
@@ -86,7 +83,6 @@
 
 ### Part 3c: Why This Matters for the Route Planner
 
-> One sentence connecting correct distances to correct routing decisions.
 
 _So if the distances are wrong and it picks a route that costs less than it actually does, then the route planner will make more incorrect decisions based on the cost it haad picked making it never picking the optimal path._
 
@@ -96,20 +92,16 @@ _So if the distances are wrong and it picks a route that costs less than it actu
 
 ### Why Greedy Fails
 
-> State the failure mode. Then give a concrete counter-example using specific node names
-> or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** _Greedy will only look at the next cheapest relic without considering how the other choices will affect the remaining cost._
+- **Counter-example setup:** _an example would be s to A cost 10 and A to B is 100 and A to T is 2 and B to A cost 1 and B to T costs 1 since A and B are relics._
+- **What greedy picks:** _Greedy will pick A since it cost the cheapest in the example_
+- **What optimal picks:** _The optimal would pick B first then A then T since it is the shortest path_
+- **Why greedy loses:** _Greedy's route would pick the cheapest path and not consider any other options_
 
 ### What the Algorithm Must Explore
 
-> One bullet. Must use the word "order."
-
-- _Your answer here._
+- _The algorithm must visit every possible order when visiting relics to guarantee finding the minimum cost route._
 
 ---
 

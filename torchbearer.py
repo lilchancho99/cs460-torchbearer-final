@@ -138,7 +138,7 @@ def dijkstra_invariant_check():
         Your Part 3 README answers, written as a string.
         Must match what you wrote in README Part 3.
 
-    TODO
+    
     """
     return """
     3a. The distanced that was found is stored as the shortest path possible.
@@ -146,7 +146,7 @@ def dijkstra_invariant_check():
     3b. Because the algorithm hasn't looked at any nodes so it cant say it made a mistake.
         because if we keep adding more nodes to the path, then it will cost more unless the new path adds 0.
         so once the algorithm ends, all distances will be as small as they can be since there is no possible way to improve it.
-    3c. So if the distances are wrong and it picks a route that costs less than it actually does, then the route planner will make more incorrect decisions based on the cost it haad picked making it never picking the optimal path.
+    3c. So if the distances are wrong and it picks a route that costs less than it actually does, then the route planner will make more incorrect decisions based on the cost it had picked making it never picking the optimal path.
     
     """
 
@@ -168,7 +168,17 @@ def explain_search():
 
     TODO
     """
-    return "TODO"
+    return """
+
+    1. failure mode: Greedy will only look at the next cheapest relic without considering how the other choices will affect the remaining cost.
+    2. Counter-example setup: an example would be s to A cost 10 and A to B is 100 and A to T is 2 and B to A cost 1 and B to T costs 1 since A and B are relics.
+    3. What greedy picks: Greedy will pick A since it cost the cheapest in the example.
+    4. What optimal picks: The optimal would pick B first then A then T since it is the shortest path.
+    5. Why greedy loses: Greedy's route would pick the cheapest path and not consider any other options.
+    
+    What the Algorithm Must Explore:
+    1. The algorithm must visit every possible order when visiting relics to guarantee finding the minimum cost route.
+"""
 
 
 # =============================================================================
